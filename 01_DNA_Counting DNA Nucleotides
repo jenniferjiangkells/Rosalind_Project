@@ -1,0 +1,12 @@
+# Problem: 01_Counting DNA Nucleotides
+# Link: http://rosalind.info/problems/dna/
+# Given: A DNA string s of length at most 1000 nt.
+# Return:  Four integers (separated by spaces) counting the respective number of times that the symbols 'A', 'C', 'G', and 'T' occur in s.
+
+f = open("rosalind_dna.txt", "r")
+s = f.read()
+
+print(s.count("A"), end=" ")
+print(s.count("C"), end=" ")
+print(s.count("G"), end=" ")
+print(s.count("T"))
