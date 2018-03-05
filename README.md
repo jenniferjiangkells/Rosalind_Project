@@ -1,2 +1,2 @@
 # Rosalind_Project
-My solutions in basic Python 3 to Rosalind Project problems from http://rosalind.info/
+My solutions in Python 3 to Rosalind Project bioinformatic problems from http://rosalind.info/
