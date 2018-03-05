@@ -1,2 +1,2 @@
 # Rosalind_Project
-My solutions to Rosalind Project problems from http://rosalind.info/
+My solutions in Python to Rosalind Project problems from http://rosalind.info/
