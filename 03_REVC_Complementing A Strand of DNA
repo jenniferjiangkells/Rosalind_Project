@@ -5,20 +5,22 @@
 
 f = open("rosalind_revc.txt", "r")
 s = f.read()
-rev = s[::-1]
 
-sc = []
+def complement(DNA):
+    rev = s[::-1]
+    output = []
+    
+    for n in rev:
+        if n == "A":
+            output.append("T")
+        elif n == "T":
+            output.append("A")
+        elif n == "C":
+            output.append("G")
+        elif n == "G":
+            output.append("C")
+    
+    output = "".join(output)
+    return output
 
-for n in rev:
-    if n == "A":
-        sc.append("T")
-    elif n == "T":
-        sc.append("A")
-    elif n == "C":
-        sc.append("G")
-    elif n == "G":
-        sc.append("C")
-
-sc = "".join(sc)
-
-print(sc)
+complement(s) 
