@@ -6,13 +6,19 @@
 n = 36
 k = 3
 
-fib1 = 1
-fib2 = 1
 
-if n > 2:
-    for i in range(3, n + 1):
-        temp = fib2
-        fib2 = fib1*k + fib2
-        fib1 = temp
-
-print(fib2)
+def fib_rab(n,k):
+    
+    seq1 = 1
+    seq2 = 1
+    
+    if n == 0:
+        return 0
+    elif n == 1:
+        return 1
+    elif n > 2:
+        for i in range(3, n + 1):
+            temp = seq2
+            seq2 = seq1*k + seq2
+            seq1 = temp
+        return seq2
