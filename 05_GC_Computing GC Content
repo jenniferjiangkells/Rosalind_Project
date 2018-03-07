@@ -1,0 +1,45 @@
+# Problem: 05_Computing GC Content
+# Link: http://rosalind.info/problems/gc/
+# Given: At most 10 DNA strings in FASTA format (of length at most 1 kbp each).
+# Return: The ID of the string having the highest GC-content, followed by the GC-content of that string. 
+
+
+f = open("rosalind_gc.txt", "r")
+data = f.readlines()
+
+
+max_ID = ""
+max_GC = 0
+
+G_count = 0
+C_count = 0
+current_GC = 0.0
+current_ID = ""
+current_l = 0
+
+for line in data:
+    if line[0] == ">":
+        if current_GC > max_GC:
+            max_GC = current_GC
+            max_ID = current_ID
+        G_count = 0
+        C_count = 0
+        current_GC = 0
+        current_l = 0
+        current_ID = line[1:14]
+    else:
+        G_count += line.count("G")
+        C_count += line.count("C")
+        current_l += len(str.strip(line))
+        current_GC = (G_count + C_count) / current_l *100
+
+current_GC = (G_count + C_count) / current_l *100
+if current_GC > max_GC:
+    max_GC = current_GC
+    max_ID = current_ID
+
+print(max_ID)
+GC_6dp = round(max_GC,6)
+print(GC_6dp)
+
+f.close()
