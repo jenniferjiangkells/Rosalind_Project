@@ -1,0 +1,15 @@
+# Problem: 06_Counting Point Mutations
+# Link: http://rosalind.info/problems/hamm/
+# Given: Two DNA strings s and t of equal length.
+# Return: The Hamming distance dH(s,t).
+
+f = open("rosalind_hamm.txt", "r")
+lines = f.readlines()
+s = lines[0]
+t = lines[1]
+
+count = 0
+for i in range(len(s)):
+    if s[i] != t[i]:
+        count += 1
+print(count)
