@@ -1,0 +1,19 @@
+# Problem: 07_Mendel's First Law
+# Link: http://rosalind.info/problems/iprb/
+# Given: Three positive integers k, m, and n, representing a population containing k+m+n organisms: k individuals are homozygous dominant for a factor, m are heterozygous, and n are homozygous recessive
+# Return: The probability that two randomly selected mating organisms will produce an individual possessing a dominant allele (and thus displaying the dominant phenotype). Assume that any two organisms can mate.
+
+def prob_dom(k,m,n):
+    #k = homozygous dominant (AA)
+    #m = heterozygous (Aa)
+    #n = homozygous recessive (aa)
+   
+    t = k+m+n
+    pm = m/t
+    pn = n/t
+    prob_A = 1 - pn * ((n-1)/(t-1)) - pn * (m/(t-1)) - pm * ((m-1)/(t-1)) * 0.25
+    
+    # prob_A= 1 - (aa*aa + Aa*aa * 1/2 + aa*AA * 1/2 + Aa*Aa * 1/4) 
+    
+    prob_A = round(prob_A,5)
+    return prob_A
