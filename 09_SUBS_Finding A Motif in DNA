@@ -1,0 +1,13 @@
+# Problem: 09_Finding A Motif in DNA
+# Link: http://rosalind.info/problems/subs/
+# Given: Two DNA strings s and t.
+# Return: All locations of t as a substring of s.
+
+def motif(s,t):
+    location = []
+    for i in range(0,len(s)):
+        sub = s[i:i+len(t)]
+        if (t == sub):
+            location.append(i+1)
+    location = ' '.join(str(x) for x in location)
+    return location
