@@ -1,0 +1,23 @@
+# Problem: 08_Translating RNA into Protein
+# Link: http://rosalind.info/problems/prot/
+# Given: An RNA string s corresponding to a strand of mRNA.
+# Return: The protein string encoded by s.
+
+f = open('rosalind_prot.txt', 'r')
+s = f.read()
+f.close()
+
+def RNA_protein(s):
+    list = []
+    for i in range(0,len(s),3):
+        c = s[i:i+3]
+        list.append(c)
+    output = []
+    for i in list:
+        if RNA_cod[i] == 'Stop':
+            break
+        elif i in RNA_cod:
+            output += RNA_cod[i]
+        
+    output = ''.join(output)
+    return output
